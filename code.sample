@@ -1,0 +1,6 @@
+func gen(buf *[]byte) chromedp.Tasks {
+  return chromedp.Tasks{
+    chromedp.Navigate("http://localhost:9876/"),
+    chromedp.FullScreenshot(buf, 100),
+  }
+}

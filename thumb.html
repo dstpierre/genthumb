@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <!-- link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/dracula.min.css"
+    / -->
+    <link rel="stylesheet" href="dracula.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script -->
+
+    <style>
+      html,
+      body {
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+      }
+      @font-face {
+        font-family: anton;
+        src: url(Anton-Regular.ttf);
+      }
+
+      h1 {
+        font-family: anton;
+        font-size: 64px;
+        position: absolute;
+        top: 400px;
+        width: 780px;
+        height: 240px;
+        color: #ffffff;
+      }
+
+      h1.left {
+        left: 15px;
+      }
+
+      h1.right {
+        left: 515px;
+      }
+
+      img {
+        position: absolute;
+        top: 160px;
+        height: 500px;
+      }
+
+      img.left {
+        left: 700px;
+      }
+
+      img.right {
+        left: 15px;
+      }
+
+      pre {
+        position: absolute;
+        top: 15px;
+        width: 1050px;
+        height: 380px;
+      }
+
+      pre.left {
+        left: 15px;
+      }
+
+      pre.right {
+        left: 15px;
+      }
+
+      code {
+        font-size: 32px;
+        border: 2px dotted #fff;
+        border-radius: 15px;
+        height: 350px;
+      }
+
+      #thumb {
+        background-color: rgba({{.BackgroundColor}});
+        width: 1080px;
+        height: 720px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="thumb">
+      <pre class="{{ .Direction }}">
+			<code class="language-go">
+{{.Code}}
+      </code>
+		</pre>
+      <h1 class="{{.Direction}}">{{.Title}}</h1>
+      <img class="{{.Direction}}" src="{{.Direction}}.png" />
+    </div>
+
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
